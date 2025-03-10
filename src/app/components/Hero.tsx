@@ -46,22 +46,10 @@ export function Hero() {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="flex-grow"
             />
-            <Select value={selectedChain} onValueChange={setSelectedChain}>
-              <SelectTrigger className="w-full sm:w-[200px]">
-                <SelectValue placeholder="Select chain" />
-              </SelectTrigger>
-              <SelectContent>
-                {blockchains.map((chain) => (
-                  <SelectItem key={chain.id} value={chain.id}>
-                    {chain.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
             <Button onClick={handleSearch} className="w-full sm:w-auto">
               <Link
                 href="/explorer"
-                className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+                className="flex items-center space-x-2 text-white px-4 py-2 rounded-lg "
               >
                 <SearchIcon />
                 <span>Search</span>

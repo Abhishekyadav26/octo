@@ -27,7 +27,6 @@ export function Navigation() {
           </div>
           <ConnectButton
             client={client}
-
             connectModal={{ size: "compact" }}
           />
         </div>
