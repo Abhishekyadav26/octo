@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Suspense } from 'react';
+import { Suspense } from "react";
 import { BlockchainExplorer } from "../components/BlockchainExplorer";
 
 export default function ExplorerPage() {
@@ -10,5 +10,5 @@ export default function ExplorerPage() {
         <BlockchainExplorer />
       </Suspense>
     </div>
-  )
+  );
 }
