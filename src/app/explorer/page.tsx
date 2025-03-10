@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { BlockchainExplorer } from '@/app/components/BlockchainExplorer'
+import { BlockchainExplorer } from "../components/BlockchainExplorer";
 
 export default function ExplorerPage() {
   return (

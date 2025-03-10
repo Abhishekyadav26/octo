@@ -3,16 +3,14 @@
 import { useState, useEffect } from "react";
 import { Search, Send, Terminal } from "lucide-react";
 import { useSearchParams } from "next/navigation";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 
 import {
-    createSession,
-    queryContract,
-    handleUserMessage,
-    executeCommand,
-  } from "@/app/scripts/QueryNebula.mjs";
-
-
+  createSession,
+  queryContract,
+  handleUserMessage,
+  executeCommand,
+} from "@/app/scripts/QueryNebula.mjs";
 
 import { useActiveAccount } from "thirdweb/react";
 
@@ -22,6 +20,7 @@ import {
   defineChain,
 } from "thirdweb";
 import { client } from "../client";
+import Link from "next/link";
 
 export function BlockchainExplorer() {
   const searchParams = useSearchParams();
@@ -36,14 +35,14 @@ export function BlockchainExplorer() {
   const [isTyping, setIsTyping] = useState(false);
 
   const account = useActiveAccount();
-  const walletAddress = account?.address; 
+  const walletAddress = account?.address;
 
   useEffect(() => {
     const initSession = async () => {
       try {
         const newSessionId = await createSession("Blockchain Explorer Session");
         setSessionId(newSessionId);
-        setIsTyping(true)
+        setIsTyping(true);
 
         const contractDetails = await queryContract(
           contractAddress!,
@@ -183,7 +182,9 @@ export function BlockchainExplorer() {
       <div className="flex flex-col flex-grow p-4">
         <div className="flex items-center mb-4">
           <Search className="w-6 h-6 text-gray-500 mr-2" />
-          <h1 className="text-xl font-bold">Blockchain Explorer</h1>
+          <h1 className="text-xl font-bold">
+            <Link href="/">Blockchain Explorer</Link>
+          </h1>
         </div>
         <div className="flex-grow bg-white rounded-lg shadow-md p-4 mb-4 overflow-y-auto">
           {messages.map((message, index) => (
