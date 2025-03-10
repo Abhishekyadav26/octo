@@ -6,9 +6,9 @@ import { ThirdwebProvider } from "thirdweb/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "thirdweb SDK + Next starter",
+  title: "WEB3 Explorer",
   description:
-    "Starter template for using thirdweb SDK with Next.js App router",
+    "Your ai web3 Explorer",
 };
 
 export default function RootLayout({

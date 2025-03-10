@@ -132,10 +132,10 @@ export function BlockchainExplorer() {
         const transactionData = JSON.parse(action.data); // Parse the transaction data
         const preparedTransaction = prepareTransaction({
           to: transactionData.to,
-          value: transactionData.value, // Value in hex
-          data: transactionData.data, // Encoded function call
-          chain: defineChain(transactionData.chainId), // Chain definition
-          client, // Pass the initialized Thirdweb client
+          value: transactionData.value,
+          data: transactionData.data,
+          chain: defineChain(transactionData.chainId),
+          client,
         });
 
         // Send and confirm the transaction using thirdweb
@@ -183,7 +183,7 @@ export function BlockchainExplorer() {
         <div className="flex items-center mb-4">
           <Search className="w-6 h-6 text-gray-500 mr-2" />
           <h1 className="text-xl font-bold">
-            <Link href="/">Blockchain Explorer</Link>
+            <Link href="/">OCTO</Link>
           </h1>
         </div>
         <div className="flex-grow bg-white rounded-lg shadow-md p-4 mb-4 overflow-y-auto">
